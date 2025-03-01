@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dream Eleven</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
   <style>
     /* Global Styles */
     body {
@@ -64,47 +66,84 @@
       color: #006e7f;
     }
 
-    /* Hero Section */
-    .hero {
-      background: url('assets/images/hero-image-2.png') no-repeat center center/cover;
-      color: white;
-      padding: 100px 0;
-      text-align: center;
-      margin-top: 60px;
-    }
+    /* Hero Section START*/
+.hero {
+  background: url('images/hero-image-2.png') no-repeat center center/cover;
+  color: white; /* Default text color */
+  padding: 100px 0;
+  text-align: center;
+  margin-top: 60px;
+  position: relative;
+}
 
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
+/* Dark overlay for better contrast */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+  z-index: 1;
+}
 
-    .hero p {
-      font-size: 1.25rem;
-      max-width: 800px;
-      margin: 0 auto 20px;
-    }
+/* Ensure text is above the overlay */
+.hero h1,
+.hero p,
+.hero .divider,
+.hero a {
+  position: relative;
+  z-index: 2;
+}
 
-    .hero .divider {
-      width: 80px;
-      height: 2px;
-      background: #006e7f;
-      margin: 20px auto;
-    }
+/* Hero Section Heading */
+.hero h1 {
+  font-size: 2.5rem; /* Same size as "What We Do" heading */
+  font-weight: bold; /* Bold the heading */
+  margin-bottom: 20px;
+}
 
-    .hero a {
-      background: #006e7f;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 25px;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 20px;
-    }
+/* Hero Section Paragraph */
+.hero p {
+  font-size: 1.25rem;
+  max-width: 800px;
+  margin: 0 auto 20px;
+  line-height: 1.6;
+}
 
-    .hero a:hover {
-      background: white;
-      color: #006e7f;
-    }
+/* Ensure the first paragraph is on one line */
+.hero p:first-of-type {
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Ensure the second paragraph is on the next line */
+.hero p:last-of-type {
+  margin-top: 10px; /* Add some spacing between the two lines */
+}
+
+/* Change text color to white (if background is dark) */
+.hero h1,
+.hero p {
+  color: white;
+}
+
+/* Button styles */
+.hero a {
+  background: #006e7f;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.hero a:hover {
+  background: white;
+  color: #006e7f;
+}
+/* Hero Section END*/
 
     /* What We Do Section */
     .what-we-do {
@@ -200,7 +239,7 @@
   <header>
     <div class="container">
       <div class="logo">
-        <img src="assets/images/long-logo.png" alt="Dream Eleven Logo">
+        <img src="images/long-logo.png" alt="Dream Eleven Logo" class="logo">
       </div>
       <nav>
         <ul>
@@ -231,27 +270,27 @@
       <h2>What We Do</h2>
       <div class="cards">
         <div class="card">
-          <img src="assets/images/hero-image-2.png" alt="Breast Milk Preservation">
+          <img src="images/hero-image-2.png" alt="Breast Milk Preservation">
           <h3>Breast Milk Preservation</h3>
           <p>We preserve your precious breast milk in beautiful resin art pieces that last a lifetime.</p>
         </div>
         <div class="card">
-          <img src="assets/images/hero-image-3.png" alt="Blood Preservation">
+          <img src="images/hero-image-3.png" alt="Blood Preservation">
           <h3>Blood Preservation</h3>
           <p>Preserve important moments by turning your blood sample into a unique piece of art.</p>
         </div>
         <div class="card">
-          <img src="assets/images/hero-image-4.png" alt="Hair Preservation">
+          <img src="images/hero-image-4.png" alt="Hair Preservation">
           <h3>Hair Preservation</h3>
           <p>Turn locks of hair into a lasting memory, preserved in an artistic resin frame.</p>
         </div>
         <div class="card">
-          <img src="assets/images/hero-image-1.png" alt="Umbilical Cord Preservation">
+          <img src="images/hero-image-1.png" alt="Umbilical Cord Preservation">
           <h3>Umbilical Cord Preservation</h3>
           <p>Preserve the memory of your newborn’s first connection with a beautiful resin piece.</p>
         </div>
         <div class="card">
-          <img src="assets/images/hero-image-2.png" alt="Photo Frames">
+          <img src="images/hero-image-2.png" alt="Photo Frames">
           <h3>Photo Frames</h3>
           <p>Create custom photo frames for your special moments like weddings and celebrations.</p>
         </div>
